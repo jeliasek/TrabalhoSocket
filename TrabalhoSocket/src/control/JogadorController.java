@@ -58,6 +58,11 @@ public class JogadorController {
 	public static String delete(HashMap<String, String> parametros, PrintStream ps) {
 		Jogador jogador = Dados.jogadores.get(parametros.get("cpf"));
 		if(jogador != null) {
+			for(int id : Dados.times.keySet()) {
+				if(Dados.times.get(id).getJogador(parametros.get("cpf")) != null) {
+					return "Não foi possível remover! Jogador " + jogador.getNome() + " vinculado ao time " + Dados.times.get(id).getNome();
+				}
+			}
 			Dados.jogadores.remove(jogador.getCpf());
 			return "Jogador removido com sucesso!";
 		}else {

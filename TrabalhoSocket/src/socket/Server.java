@@ -59,7 +59,7 @@ public class Server {
 	}
 	
 	public String executaAcao(String parametrosUsuario) {
-		System.out.println("ExecutaAcao " + parametrosUsuario);
+		
 		String[] itens = parametrosUsuario.split(";");
 		HashMap<String, String> parametros = new HashMap<>();
 		for(String parametro : itens) {

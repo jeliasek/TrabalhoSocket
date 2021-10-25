@@ -50,6 +50,11 @@ public class TreinadorController {
 	public static String delete(HashMap<String, String> parametros, PrintStream ps) {
 		Treinador treinador = Dados.treinadores.get(parametros.get("cpf"));
 		if(treinador != null) {
+			for(int id: Dados.times.keySet()) {
+				if(Dados.times.get(id).getTreinador() == treinador) {
+					return "Não foi possível remover! Treinador " + treinador.getNome() + " vinculado ao time " + Dados.times.get(id).getNome() + ".";
+				}
+			}
 			Dados.treinadores.remove(treinador.getCpf());
 			return "Treinador removido com sucesso!";
 		}else {
