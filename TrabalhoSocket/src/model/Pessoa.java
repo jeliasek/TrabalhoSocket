@@ -15,7 +15,7 @@ public class Pessoa {
 	        this.endereco = endereco;
 	    }
 
-	    public String getNome() {
+	    public String getNome() { 
 	        return nome;
 	    }
 

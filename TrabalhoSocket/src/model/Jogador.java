@@ -14,7 +14,7 @@ public class Jogador extends Pessoa{
 		this.numero = numero;
 	}
 	
-	public String getPosicao() {
+	public String getPosicao() { 
         return posicao;
     }
 	public void setPosicao(String posicao) {

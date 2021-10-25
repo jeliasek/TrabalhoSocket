@@ -33,7 +33,7 @@ public class Client {
             InputStream in = conn.getInputStream();
             OutputStream out = conn.getOutputStream();
 
-            String parametros = "";
+            String parametros = ""; 
             do {
             	System.out.println(
             			   "--------------------------------- \n" +

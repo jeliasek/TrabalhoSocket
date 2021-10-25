@@ -71,7 +71,7 @@ public class Server {
 					
 					case "UPDATE":{
 						return TreinadorController.update(parametros);
-					}
+					} 
 					
 					case "DELETE":{
 						return TreinadorController.delete(parametros);

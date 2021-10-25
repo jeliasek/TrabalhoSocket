@@ -11,7 +11,7 @@ public class ServerMain {
 	
 	
 	public static void main(String[] args) throws IOException{
-        Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in); 
         
 //        Server server = new Server(s.nextInt());
         ConfiguracaoController config = new ConfiguracaoController();

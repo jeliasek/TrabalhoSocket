@@ -17,7 +17,7 @@ public class Treinador extends Pessoa{
 	}
 	
 	public void setNumeroLicenca(String numeroLicenca) {
-		this.numeroLicenca = numeroLicenca;
+		this.numeroLicenca = numeroLicenca; 
 	}
 	
 	  @Override

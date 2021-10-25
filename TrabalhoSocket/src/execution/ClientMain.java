@@ -17,7 +17,7 @@ public class ClientMain {
         	String[] valores = ipPorta.split(";");
         	int porta = Integer.parseInt(valores[1]);
         	String ip = valores[0];
-        	Client c = new Client(ip, porta, s);
+        	Client c = new Client(ip, porta, s); 
         }
         
     }

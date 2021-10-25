@@ -16,7 +16,7 @@ public class TimeFutebol {
 	public TimeFutebol(String nome, int anoCriacao) {
 		this.nome = nome;
 		this.id = id + 1;
-		this.anoCriacao = anoCriacao;
+		this.anoCriacao = anoCriacao; 
 	}
 	
 	public Treinador getTreinador() {
