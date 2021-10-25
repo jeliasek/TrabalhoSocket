@@ -1,6 +1,5 @@
 package control;
 
-import java.io.PrintStream;
 import java.util.HashMap;
 
 import model.Dados;
@@ -11,7 +10,7 @@ import model.Treinador;
 public class TimeController {
 	TimeFutebol time;
 	
-	public static String create(HashMap<String, String> parametros, PrintStream ps) {
+	public static String create(HashMap<String, String> parametros) {
 		
 		String nome = parametros.get("nome");
 		int anoCriacao = Integer.parseInt(parametros.get("anoCriacao"));
@@ -22,7 +21,7 @@ public class TimeController {
 		return "Time " + time.getId() + " - " + time.getNome() + " cadastrado com sucesso!";
 	}
 	
-	public static String update(HashMap<String, String> parametros, PrintStream ps) {
+	public static String update(HashMap<String, String> parametros) {
 		System.out.println("Recebido: " + parametros.get("id"));
 		int id = Integer.parseInt(parametros.get("id"));
 		System.out.println("Tratado: " + id);
@@ -44,7 +43,7 @@ public class TimeController {
 		
 	}
 	
-	public static String delete(HashMap<String, String> parametros, PrintStream ps) {
+	public static String delete(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {
@@ -58,7 +57,7 @@ public class TimeController {
 		
 	}
 	
-	public static String getOne(HashMap<String, String> parametros, PrintStream ps) {
+	public static String getOne(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {
@@ -68,7 +67,7 @@ public class TimeController {
 		}
 	}
 	
-	public static String getAll(PrintStream ps) {
+	public static String getAll() {
 		String retorno = "";
 		
 		for(int id : Dados.times.keySet()) {
@@ -83,7 +82,7 @@ public class TimeController {
 		return retorno;
 	}
 	
-	public static String addTreinador(HashMap<String, String> parametros, PrintStream ps) {
+	public static String addTreinador(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {
@@ -104,7 +103,7 @@ public class TimeController {
 		}
 	}
 	
-	public static String removeTreinador(HashMap<String, String> parametros, PrintStream ps) {
+	public static String removeTreinador(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {
@@ -123,7 +122,7 @@ public class TimeController {
 		}
 	}
 	
-	public static String addJogador(HashMap<String, String> parametros, PrintStream ps) {
+	public static String addJogador(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {
@@ -145,7 +144,7 @@ public class TimeController {
 		}
 	}
 	
-	public static String removeJogador(HashMap<String, String> parametros, PrintStream ps) {
+	public static String removeJogador(HashMap<String, String> parametros) {
 		int id = Integer.parseInt(parametros.get("id"));
 		TimeFutebol time = Dados.times.get(id);
 		if(time != null) {

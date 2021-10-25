@@ -1,6 +1,5 @@
 package control;
 
-import java.io.PrintStream;
 import java.util.HashMap;
 
 import model.Dados;
@@ -9,7 +8,7 @@ import model.Treinador;
 public class TreinadorController {
 	Treinador treinador;
 	
-	public static String create(HashMap<String, String> parametros, PrintStream ps) {
+	public static String create(HashMap<String, String> parametros) {
 		if(Dados.treinadores.get(parametros.get("cpf")) != null) {
 			return "Treinador com CPF informado já existe.";
 		}
@@ -25,7 +24,7 @@ public class TreinadorController {
 		return "Treinador cadastrado com sucesso!";
 	}
 	
-	public static String update(HashMap<String, String> parametros, PrintStream ps) {
+	public static String update(HashMap<String, String> parametros) {
 		
 		Treinador treinador = Dados.treinadores.get(parametros.get("cpf"));
 		if(treinador != null) {
@@ -47,7 +46,7 @@ public class TreinadorController {
 		
 	}
 	
-	public static String delete(HashMap<String, String> parametros, PrintStream ps) {
+	public static String delete(HashMap<String, String> parametros) {
 		Treinador treinador = Dados.treinadores.get(parametros.get("cpf"));
 		if(treinador != null) {
 			for(int id: Dados.times.keySet()) {
@@ -65,7 +64,7 @@ public class TreinadorController {
 		
 	}
 	
-	public static String getOne(HashMap<String, String> parametros, PrintStream ps) {
+	public static String getOne(HashMap<String, String> parametros) {
 		
 		Treinador treinador = Dados.treinadores.get(parametros.get("cpf"));
 		if(treinador != null) {
@@ -76,7 +75,7 @@ public class TreinadorController {
 		}
 	}
 	
-	public static String getAll(PrintStream ps) {
+	public static String getAll() {
 		String retorno = "";
 		
 		for(String cpf : Dados.treinadores.keySet()) {

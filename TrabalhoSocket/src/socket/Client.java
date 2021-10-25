@@ -1,6 +1,5 @@
 package socket;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,7 +11,6 @@ public class Client {
 	private String host;
 	private int porta;
 	private Socket socket;
-	DataOutputStream stream;
 	
 	public Socket getSocket() {
 		return socket;

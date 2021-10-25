@@ -1,10 +1,8 @@
 package socket;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
@@ -14,15 +12,13 @@ import control.TimeController;
 import control.TreinadorController;
 
 public class Server {
-	
-	PrintStream ps;
-	DataInputStream stream;
-	
+	private int porta;
 	public Server(int porta) throws IOException {
-		try ( ServerSocket server = new ServerSocket(porta);) /* try-with */ {
+		this.porta = porta;
+		try ( ServerSocket server = new ServerSocket(this.porta);) /* try-with */ {
 
             server.setReuseAddress(true);
-            System.out.println("Aguardando conexao TCP na porta "+ porta +"...");
+            System.out.println("Aguardando conexao TCP na porta "+ this.porta +"...");
 
             try ( Socket conn = server.accept();) /* try-with */ {
 
@@ -70,23 +66,23 @@ public class Server {
 			case "TREINADOR": {
 				switch(parametros.get("acao")) {
 					case "CREATE":{
-						return TreinadorController.create(parametros, ps);
+						return TreinadorController.create(parametros);
 					}
 					
 					case "UPDATE":{
-						return TreinadorController.update(parametros, ps);
+						return TreinadorController.update(parametros);
 					}
 					
 					case "DELETE":{
-						return TreinadorController.delete(parametros, ps);
+						return TreinadorController.delete(parametros);
 					}
 					
 					case "GETONE":{
-						return TreinadorController.getOne(parametros, ps);
+						return TreinadorController.getOne(parametros);
 					}
 					
 					case "GETALL":{
-						return TreinadorController.getAll(ps);
+						return TreinadorController.getAll();
 					}
 				}
 			}
@@ -94,23 +90,23 @@ public class Server {
 			case "JOGADOR":{
 				switch(parametros.get("acao")) {
 					case "CREATE":{
-						return JogadorController.create(parametros, ps);
+						return JogadorController.create(parametros);
 					}
 					
 					case "UPDATE":{
-						return JogadorController.update(parametros, ps);
+						return JogadorController.update(parametros);
 					}
 					
 					case "DELETE":{
-						return JogadorController.delete(parametros, ps);
+						return JogadorController.delete(parametros);
 					}
 					
 					case "GETONE":{
-						return JogadorController.getOne(parametros, ps);
+						return JogadorController.getOne(parametros);
 					}
 					
 					case "GETALL":{
-						return JogadorController.getAll(ps);
+						return JogadorController.getAll();
 					}
 				}
 			}
@@ -119,39 +115,39 @@ public class Server {
 				
 				switch(parametros.get("acao")) {
 					case "CREATE":{
-						return TimeController.create(parametros, ps);
+						return TimeController.create(parametros);
 					}
 					
 					case "UPDATE":{
-						return TimeController.update(parametros, ps);
+						return TimeController.update(parametros);
 					}
 					
 					case "DELETE":{
-						return TimeController.delete(parametros, ps);
+						return TimeController.delete(parametros);
 					}
 					
 					case "GETONE":{
-						return TimeController.getOne(parametros, ps);
+						return TimeController.getOne(parametros);
 					}
 					
 					case "GETALL":{
-						return TimeController.getAll(ps);
+						return TimeController.getAll();
 					}
 					
 					case "ADDJOGADOR":{
-						return TimeController.addJogador(parametros, ps);
+						return TimeController.addJogador(parametros);
 					}
 					
 					case "REMOVEJOGADOR":{
-						return TimeController.removeJogador(parametros, ps);
+						return TimeController.removeJogador(parametros);
 					}
 					
 					case "ADDTREINADOR":{
-						return TimeController.addTreinador(parametros, ps);
+						return TimeController.addTreinador(parametros);
 					}
 					
 					case "REMOVETREINADOR":{
-						return TimeController.removeTreinador(parametros, ps);
+						return TimeController.removeTreinador(parametros);
 					}
 				}
 			}

@@ -1,6 +1,5 @@
 package control;
 
-import java.io.PrintStream;
 import java.util.HashMap;
 
 import model.Dados;
@@ -10,7 +9,7 @@ import model.Jogador;
 public class JogadorController {
 	Jogador jogador;
 	
-	public static String create(HashMap<String, String> parametros, PrintStream ps) {
+	public static String create(HashMap<String, String> parametros) {
 		if(Dados.jogadores.get(parametros.get("cpf")) != null) {
 			return "Jogador com CPF informado já existe.";
 		}
@@ -27,7 +26,7 @@ public class JogadorController {
 		return "Jogador cadastrado com sucesso!";
 	}
 	
-	public static String update(HashMap<String, String> parametros, PrintStream ps) {
+	public static String update(HashMap<String, String> parametros) {
 		
 		
 		Jogador jogador = Dados.jogadores.get(parametros.get("cpf"));
@@ -55,7 +54,7 @@ public class JogadorController {
 		
 	}
 	
-	public static String delete(HashMap<String, String> parametros, PrintStream ps) {
+	public static String delete(HashMap<String, String> parametros) {
 		Jogador jogador = Dados.jogadores.get(parametros.get("cpf"));
 		if(jogador != null) {
 			for(int id : Dados.times.keySet()) {
@@ -73,7 +72,7 @@ public class JogadorController {
 		
 	}
 	
-	public static String getOne(HashMap<String, String> parametros, PrintStream ps) {
+	public static String getOne(HashMap<String, String> parametros) {
 		
 		Jogador jogador = Dados.jogadores.get(parametros.get("cpf"));
 		if(jogador != null) {
@@ -83,7 +82,7 @@ public class JogadorController {
 		}
 	}
 	
-	public static String getAll(PrintStream ps) {
+	public static String getAll() {
 		String retorno = "";
 		
 		for(String cpf : Dados.jogadores.keySet()) {
