@@ -77,12 +77,12 @@ public class TreinadorController {
 	
 	public static String getAll() {
 		String retorno = "";
-		
 		for(String cpf : Dados.treinadores.keySet()) {
 			if(!(retorno.equals(""))) {
 				retorno += "\n";
 			}else {
 				retorno += "--------------------------------- \n";
+				retorno += "Total de Registros Encontrados: " + Dados.treinadores.size() + "\n";
 			}
 			retorno += Dados.treinadores.get(cpf).toString();
 		}

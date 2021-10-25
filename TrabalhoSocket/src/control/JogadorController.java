@@ -84,15 +84,18 @@ public class JogadorController {
 	
 	public static String getAll() {
 		String retorno = "";
-		
 		for(String cpf : Dados.jogadores.keySet()) {
-			retorno += Dados.jogadores.get(cpf).toString() + "\n";
+			if(!(retorno.equals(""))) {
+				retorno += "\n";
+			}else {
+				retorno += "--------------------------------- \n";
+				retorno += "Total de Registros Encontrados: " + Dados.jogadores.size() + "\n";
+			}
+			retorno += Dados.jogadores.get(cpf).toString();
 		}
-		
 		if(retorno.equals("")) {
-			retorno = "Nenhum jogador encontrado.";
+			retorno = "Nenhum jogador encontrado!";
 		}
-		
 		return retorno;
 	}
 }

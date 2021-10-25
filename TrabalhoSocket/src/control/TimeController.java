@@ -69,10 +69,10 @@ public class TimeController {
 	
 	public static String getAll() {
 		String retorno = "";
-		
 		for(int id : Dados.times.keySet()) {
 			if(!(retorno.equals(""))) {
 				retorno += "\n --------------------------------- \n";
+				retorno += "Total de Registros Encontrados: " + Dados.times.size() + "\n";
 			}
 			retorno += Dados.times.get(id).toString();
 		}
