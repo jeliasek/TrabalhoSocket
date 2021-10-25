@@ -21,7 +21,7 @@ public class Client {
 	}
 	
 	public void setHost(String host) {
-		this.host = host; 
+		this.host = host;
 	}
 	
 	public Client(String host, int porta, Scanner s) throws IOException {

@@ -63,7 +63,7 @@ public class Server {
 		}
 		
 		switch(parametros.get("modelo")) {
-			case "TREINADOR": { 
+			case "TREINADOR": {
 				switch(parametros.get("acao")) {
 					case "CREATE":{
 						return TreinadorController.create(parametros);

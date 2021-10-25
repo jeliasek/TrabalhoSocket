@@ -137,7 +137,7 @@ public class TimeController {
 				time.addJogador(parametros.get("cpf"));
 				return "Jogador " +jogador.getNome() + " adicionado ao time " +time.getNome()+ " com sucesso";
 			}else {
-				return "Jogador não encontrado"; 
+				return "Jogador não encontrado";
 			}
 		}else {
 			return "Time não encontrado";

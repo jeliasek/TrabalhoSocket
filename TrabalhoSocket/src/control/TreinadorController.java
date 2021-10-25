@@ -10,7 +10,7 @@ public class TreinadorController {
 	
 	public static String create(HashMap<String, String> parametros) {
 		if(Dados.treinadores.get(parametros.get("cpf")) != null) {
-			return "Treinador com CPF informado já existe."; 
+			return "Treinador com CPF informado já existe.";
 		}
 		
 		String nome = parametros.get("nome");

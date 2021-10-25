@@ -7,7 +7,7 @@ import model.Jogador;
 
 
 public class JogadorController {
-	Jogador jogador; 
+	Jogador jogador;
 	
 	public static String create(HashMap<String, String> parametros) {
 		if(Dados.jogadores.get(parametros.get("cpf")) != null) {
