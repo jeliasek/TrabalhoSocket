@@ -14,9 +14,9 @@ public class ConfiguracaoController {
 	
 	public String lerArquivoConfiguracao() {
 		String retorno = "";
-        File arq = new File("ArquivoConfig.txt");
+        File arq = new File("ArquivoConfig.txt"); 
         try {
-            FileReader leitorArq = new FileReader(arq);
+            FileReader leitorArq = new FileReader(arq); 
             BufferedReader leitorTexto = new BufferedReader(leitorArq);
             String linha = leitorTexto.readLine();
             HashMap<String, String> configuracoes = new HashMap<>();
